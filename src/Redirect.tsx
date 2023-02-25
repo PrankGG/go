@@ -21,11 +21,12 @@ export default function Redirect() {
 
   if (data && !loading && !failed) {
     window.location.href = data;
+    return <>Redirecting...</>;
   }
 
   if (loading) {
     return <>Loading...</>;
   }
-    
+
   return <>Invalid redirect.</>;
 }
