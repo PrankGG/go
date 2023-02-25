@@ -5,6 +5,7 @@ export default function Redirect() {
   const [loading, setLoading] = useState(true);
   const [failed, setFailed] = useState(false);
   const [data, setData] = useState("");
+
   useEffect(function () {
     fetch(
       `https://raw.githubusercontent.com/PrankGG/go-paths/main/${location.pathname}.txt`
@@ -21,12 +22,12 @@ export default function Redirect() {
 
   if (data && !loading && !failed) {
     window.location.href = data;
-    return <>Redirecting...</>;
+    return <p>Redirecting to {data}...</p>;
   }
 
   if (loading) {
-    return <>Loading...</>;
+    return <p>Loading...</p>;
   }
 
-  return <>Invalid redirect.</>;
+  return <p>Invalid redirect.</p>;
 }
