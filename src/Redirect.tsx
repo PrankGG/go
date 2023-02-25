@@ -26,8 +26,9 @@ export default function Redirect() {
   }, []);
 
   if (data && !loading && !failed) {
+    const url = new URL(data);
     window.location.href = data;
-    return <p>Redirecting to {data}...</p>;
+    return <p>Redirecting to {url.hostname}...</p>;
   }
 
   if (loading) {

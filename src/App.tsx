@@ -6,7 +6,7 @@ export default function App() {
       <img
         src="https://cdn.discordapp.com/attachments/927030276394217482/993629387012448306/logowhite.svg"
         alt="Logo"
-        className="w-96"
+        className="w-96 mx-auto"
       />
       <Routes>
         <Route path="*" element={<Redirect />} />
