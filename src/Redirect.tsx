@@ -16,7 +16,12 @@ export default function Redirect() {
         if (data === "404: Not Found") {
           setFailed(true);
         }
-        setData(data);
+        setData(
+          data
+            .replaceAll("{ref}", document.referrer)
+            .replaceAll("{lang}", navigator.language)
+            .replaceAll("{redirectAt}", String(Date.now()))
+        );
       });
   }, []);
 
